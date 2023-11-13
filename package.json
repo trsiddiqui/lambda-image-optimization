@@ -6,7 +6,6 @@
   },
   "version": "0.0.1",
   "description": "lambda",
-  "type": "module",
   "scripts": {
     "clean": "rm -rf .aws-sam",
     "tsc": "tsc --noEmit",

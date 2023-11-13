@@ -116,11 +116,9 @@ export const dummyPrintMethod = async (
 
   // the repo is public
   const s3Config = {
-    accessKeyId: 'AKIA6NS3BSJJLKMDRRPH',
-    secretAccessKey: 'mrkIy8MGkdsm20sqgLfXnLhWb0Ezky+8qBvXN6Dr',
+    accessKeyId: 'asdasd',
+    secretAccessKey: 'asdasd+8qBvXN6Dr',
     region: 'us-east-1',
-    // endpoint: menuItemImages.endpoint || undefined, // endpoint is automatically generated with region if we use a real Amazon S3 rather than localstack.
-    // s3ForcePathStyle: true, // without this option, localstack's endpoint does not work. With real Amazon S3, this works fine as long as endpoint is undefined.
   }
 
   AWS.config.update({ region: 'us-east-1' })
