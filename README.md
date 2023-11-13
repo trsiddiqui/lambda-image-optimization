@@ -1,6 +1,14 @@
 run the following commands in a terminal on the root to see it throwing the following error
 "ReferenceError: __dirname is not defined in ES module scope","    at ../../../../node_modules/sharp/lib/libvips.js (file:///var/task/images_handlers.mjs:783933:32)"
 
+## Prerequisites
+
+- `aws-sam-cli` - Install via the AWS method: [here](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html). We use the CLI tool to build, run, and invoke lambda functions. AWS no longer supportis installation through the AWS-managed Homebrew installer and recommends installation through first-party installers. Relevant thread: [here](https://github.com/aws/aws-sam-cli/issues/5613).
+- `esbuild` - Install with `npm install -g esbuild`. AWS SAM CLI uses `esbuild` to transpile Typescript code into Javascript.
+- `curl` or `aws-cli` - Used to invoke lambda functions. `curl` should already be installed but if not then install via method of your choice. `aws-cli` should be installed via the AWS method: [here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+
+## To run on local
+
 1. `yarn`
 2. `export NODE_OPTIONS=--max_old_space_size=8192`
 2. `sam build && sam local start-lambda`
