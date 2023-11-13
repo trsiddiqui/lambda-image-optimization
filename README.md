@@ -1,4 +1,5 @@
-run the following commands in a terminal on the root
+run the following commands in a terminal on the root to see it throwing the following error
+"ReferenceError: __dirname is not defined in ES module scope","    at ../../../../node_modules/sharp/lib/libvips.js (file:///var/task/images_handlers.mjs:783933:32)"
 
 1. `yarn`
 2. `export NODE_OPTIONS=--max_old_space_size=8192`
