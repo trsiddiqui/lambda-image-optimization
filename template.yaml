@@ -1,0 +1,29 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  DummyPrintMethod:
+    Type: AWS::Serverless::Function
+    Properties:
+      # On Apple M chip laptops we need arm64 but in docker we use the default x86_64
+      # Uncomment the below if you want to run this locally on your M-chip Mac instead of in docker via TB
+      # Architectures:
+      #   - "arm64"
+      CodeUri: src/domains/images/handlers
+      Handler: images_handlers.dummyPrintMethod
+      Runtime: nodejs18.x
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Format: esm
+        Minify: false
+        OutExtension:
+          - .js=.mjs
+        Target: "es6"
+        Sourcemap: true
+        Banner:
+          - js=import { createRequire } from 'module'; const require = createRequire(import.meta.url);
+        EntryPoints:
+          - images_handlers.ts
+        Loader:
+          - ".node=file"

@@ -1,0 +1,29 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    // From https://github.com/tsconfig/bases/blob/master/bases/node18.json, node 18 supports ES2022
+    "target": "ES2022",
+    "lib": ["es2023"],
+    // Search under node_modules for non-relative imports.
+    "moduleResolution": "node",
+    // Transpile to commonjs modules for node
+    "module": "CommonJS",
+    // Process & infer types from .js files.
+    "allowJs": true,
+    "checkJs": true,
+    // Don't emit; allow Babel to transform files.
+    "strict": true,
+    "noEmit": true,
+    // Import non-ES modules as default imports.
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    // Ensure broken dependencies don't break project type checking.
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"]
+    }
+  },
+  "include": ["src", "dangerfile.ts", "testEnvironment.js"],
+  "exclude": ["node_modules"]
+}
